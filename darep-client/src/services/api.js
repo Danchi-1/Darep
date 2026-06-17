@@ -7,6 +7,15 @@ const api = axios.create({
   headers: { 'Content-Type': 'application/json' },
 })
 
+// Add auth token to requests if available
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('auth_token')
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`
+  }
+  return config
+})
+
 export async function uploadFile(file, onProgress) {
   const formData = new FormData()
   formData.append('file', file)
@@ -34,6 +43,21 @@ export async function testConnection(config) {
 
 export async function connectDatabase(config) {
   const { data } = await api.post('/connect', config)
+  return data
+}
+
+export async function login(email, password) {
+  const { data } = await api.post('/auth/login', { email, password })
+  return data
+}
+
+export async function signup({ name, email, password }) {
+  const { data } = await api.post('/auth/signup', { name, email, password })
+  return data
+}
+
+export async function logout() {
+  const { data } = await api.post('/auth/logout')
   return data
 }
 
