@@ -57,18 +57,18 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-navy via-slate-900 to-slate-800 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
           <Link to="/" className="inline-flex items-center gap-2">
-            <BarChart3 className="h-8 w-8 text-indigo-accent" />
-            <span className="text-2xl font-bold text-white">Darep</span>
+            <BarChart3 className="h-8 w-8 text-navy" />
+            <span className="text-2xl font-bold text-slate-900">Darep</span>
           </Link>
         </div>
 
-        <div className="rounded-2xl bg-slate-800/50 p-8 backdrop-blur-sm border border-slate-700">
-          <h1 className="text-2xl font-bold text-white mb-2">Welcome back</h1>
-          <p className="text-slate-400 mb-6">Sign in to your account to continue</p>
+        <div className="rounded-xl bg-white p-8 shadow-sm border border-slate-200">
+          <h1 className="text-2xl font-bold text-slate-900 mb-2">Welcome back</h1>
+          <p className="text-slate-600 mb-6">Sign in to your account to continue</p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
@@ -94,23 +94,23 @@ export default function LoginPage() {
             />
 
             <div className="flex items-center justify-between text-sm">
-              <label className="flex items-center gap-2 text-slate-400">
-                <input type="checkbox" className="rounded border-slate-600 bg-slate-700" />
+              <label className="flex items-center gap-2 text-slate-600">
+                <input type="checkbox" className="rounded border-slate-300 bg-white" />
                 Remember me
               </label>
-              <Link to="/forgot-password" className="text-indigo-accent hover:text-indigo-400">
+              <Link to="/forgot-password" className="text-navy hover:text-slate-700 font-medium">
                 Forgot password?
               </Link>
             </div>
 
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <Button type="submit" className="w-full bg-navy hover:bg-slate-800 text-white" disabled={isLoading}>
               {isLoading ? 'Signing in...' : 'Sign in'}
             </Button>
           </form>
 
-          <div className="mt-6 text-center text-sm text-slate-400">
+          <div className="mt-6 text-center text-sm text-slate-600">
             Don't have an account?{' '}
-            <Link to="/signup" className="text-indigo-accent hover:text-indigo-400 font-medium">
+            <Link to="/signup" className="text-navy hover:text-slate-700 font-semibold">
               Sign up
             </Link>
           </div>

@@ -71,18 +71,18 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-navy via-slate-900 to-slate-800 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
           <Link to="/" className="inline-flex items-center gap-2">
-            <BarChart3 className="h-8 w-8 text-indigo-accent" />
-            <span className="text-2xl font-bold text-white">Darep</span>
+            <BarChart3 className="h-8 w-8 text-navy" />
+            <span className="text-2xl font-bold text-slate-900">Darep</span>
           </Link>
         </div>
 
-        <div className="rounded-2xl bg-slate-800/50 p-8 backdrop-blur-sm border border-slate-700">
-          <h1 className="text-2xl font-bold text-white mb-2">Create an account</h1>
-          <p className="text-slate-400 mb-6">Start analyzing your data with AI-powered insights</p>
+        <div className="rounded-xl bg-white p-8 shadow-sm border border-slate-200">
+          <h1 className="text-2xl font-bold text-slate-900 mb-2">Create an account</h1>
+          <p className="text-slate-600 mb-6">Start analyzing your data with AI-powered insights</p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
@@ -129,14 +129,14 @@ export default function SignupPage() {
               autoComplete="new-password"
             />
 
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <Button type="submit" className="w-full bg-navy hover:bg-slate-800 text-white mt-2" disabled={isLoading}>
               {isLoading ? 'Creating account...' : 'Create account'}
             </Button>
           </form>
 
-          <div className="mt-6 text-center text-sm text-slate-400">
+          <div className="mt-6 text-center text-sm text-slate-600">
             Already have an account?{' '}
-            <Link to="/login" className="text-indigo-accent hover:text-indigo-400 font-medium">
+            <Link to="/login" className="text-navy hover:text-slate-700 font-semibold">
               Sign in
             </Link>
           </div>
