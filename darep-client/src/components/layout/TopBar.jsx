@@ -6,6 +6,7 @@ export default function TopBar({ isConnected, sourceType, sourceLabel, columnCou
   return (
     <header className="fixed top-0 right-0 left-0 z-40 flex h-14 items-center justify-between border-b border-slate-800 bg-navy px-6">
       <div className="flex items-center gap-3">
+        <img src="/favicon.svg" alt="Darep Logo" className="h-6 w-6" />
         <span className="text-lg font-semibold tracking-tight text-white">Darep</span>
         {isConnected && (
           <div className="flex items-center gap-2 rounded-full bg-slate-800/60 px-3 py-1">

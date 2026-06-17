@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, BarChart3, Database, MessageSquare, Shield, Zap } from 'lucide-react'
 import Button from '../shared/Button'
-import heroLogo from '../../assets/hero.png'
 
 export default function LandingPage() {
   return (
@@ -9,7 +8,7 @@ export default function LandingPage() {
       {/* Navigation */}
       <nav className="flex items-center justify-between px-6 py-4 bg-white border-b border-slate-200">
         <div className="flex items-center gap-2">
-          <img src={heroLogo} alt="Darep" className="h-8 w-8" />
+          <img src="/favicon.svg" alt="Darep" className="h-8 w-8" />
           <span className="text-xl font-bold text-slate-900">Darep</span>
         </div>
         <div className="flex items-center gap-4">

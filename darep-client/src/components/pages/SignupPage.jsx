@@ -75,7 +75,7 @@ export default function SignupPage() {
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
           <Link to="/" className="inline-flex items-center gap-2">
-            <BarChart3 className="h-8 w-8 text-navy" />
+            <img src="/favicon.svg" alt="Darep" className="h-8 w-8" />
             <span className="text-2xl font-bold text-slate-900">Darep</span>
           </Link>
         </div>
