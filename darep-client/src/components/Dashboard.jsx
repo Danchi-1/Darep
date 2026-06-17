@@ -1,15 +1,17 @@
+import { useState, useEffect } from 'react'
 import AppShell from './layout/AppShell'
 import SetupModal from './session/SetupModal'
 import ChatPanel from './chat/ChatPanel'
 import ResultsPanel from './results/ResultsPanel'
 import EmptyState from './shared/EmptyState'
-import { MessageSquare, BarChart3 } from 'lucide-react'
+import Button from './shared/Button'
+import { MessageSquare, BarChart3, Plus } from 'lucide-react'
 import { useSession } from '../context/SessionContext'
 import { useChatContext } from '../context/ChatContext'
 import { SessionProvider } from '../context/SessionContext'
 import { ChatProvider } from '../context/ChatContext'
 
-function DisconnectedChatPlaceholder() {
+function DisconnectedChatPlaceholder({ onOpenSetup }) {
   return (
     <div className="flex h-[calc(100vh-3.5rem)] flex-col">
       <div className="border-b border-slate-100 px-4 py-3">
@@ -19,6 +21,12 @@ function DisconnectedChatPlaceholder() {
         icon={MessageSquare}
         title="Connect a data source"
         description="Upload a file or connect to a database to start chatting with your data."
+        action={
+          <Button onClick={onOpenSetup} className="bg-navy hover:bg-slate-800 text-white">
+            <Plus className="mr-2 h-4 w-4" />
+            Add Data Source
+          </Button>
+        }
       />
     </div>
   )
@@ -49,10 +57,21 @@ function DashboardContent() {
     clearSession,
   } = useSession()
   const { clearChat } = useChatContext()
+  
+  // Do not auto-open the setup modal, let the user see the dashboard first
+  const [isSetupOpen, setIsSetupOpen] = useState(false)
+
+  // Auto-close modal when connected
+  useEffect(() => {
+    if (isConnected) {
+      setIsSetupOpen(false)
+    }
+  }, [isConnected])
 
   const handleNewSession = () => {
     clearSession()
     clearChat()
+    setIsSetupOpen(true)
   }
 
   return (
@@ -64,10 +83,10 @@ function DashboardContent() {
         columnCount={columnCount}
         rowCount={rowCount}
         onNewSession={handleNewSession}
-        chatPanel={isConnected ? <ChatPanel /> : <DisconnectedChatPlaceholder />}
+        chatPanel={isConnected ? <ChatPanel /> : <DisconnectedChatPlaceholder onOpenSetup={() => setIsSetupOpen(true)} />}
         resultsPanel={isConnected ? <ResultsPanel /> : <DisconnectedResultsPlaceholder />}
       />
-      <SetupModal open={!isConnected} />
+      <SetupModal open={isSetupOpen} onClose={() => setIsSetupOpen(false)} />
     </>
   )
 }

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Upload, Database } from 'lucide-react'
+import { Upload, Database, X } from 'lucide-react'
 import FileUploader from './FileUploader'
 import DBConnector from './DBConnector'
 
@@ -8,7 +8,7 @@ const TABS = [
   { id: 'database', label: 'Connect Database', icon: Database },
 ]
 
-export default function SetupModal({ open }) {
+export default function SetupModal({ open, onClose }) {
   const [activeTab, setActiveTab] = useState('file')
 
   if (!open) return null
@@ -30,6 +30,15 @@ export default function SetupModal({ open }) {
               Upload a file or connect to a database to begin analysing data.
             </p>
           </div>
+          {onClose && (
+            <button
+              onClick={onClose}
+              className="rounded-full p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-colors"
+              aria-label="Close modal"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          )}
         </div>
 
         <div className="flex border-b border-slate-100 px-6">
