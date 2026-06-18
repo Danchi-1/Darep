@@ -47,7 +47,7 @@ function DisconnectedResultsPlaceholder() {
   )
 }
 
-function DashboardContent() {
+function DashboardContent({ isDemo }) {
   const {
     isConnected,
     sourceType,
@@ -55,8 +55,21 @@ function DashboardContent() {
     columnCount,
     rowCount,
     clearSession,
+    setSession,
   } = useSession()
   const { clearChat } = useChatContext()
+  
+  useEffect(() => {
+    if (isDemo && !isConnected) {
+      setSession({
+        sessionId: 'demo-session-123',
+        sourceType: 'file',
+        sourceLabel: 'Sample Sales Data.csv',
+        columnCount: 15,
+        rowCount: 5000
+      })
+    }
+  }, [isDemo, isConnected, setSession])
   
   // Do not auto-open the setup modal, let the user see the dashboard first
   const [isSetupOpen, setIsSetupOpen] = useState(false)
@@ -91,11 +104,11 @@ function DashboardContent() {
   )
 }
 
-export default function Dashboard() {
+export default function Dashboard({ isDemo }) {
   return (
     <SessionProvider>
       <ChatProvider>
-        <DashboardContent />
+        <DashboardContent isDemo={isDemo} />
       </ChatProvider>
     </SessionProvider>
   )
