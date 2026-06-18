@@ -22,7 +22,7 @@ function DisconnectedChatPlaceholder({ onOpenSetup }) {
         title="Connect a data source"
         description="Upload a file or connect to a database to start chatting with your data."
         action={
-          <Button onClick={onOpenSetup} className="bg-navy hover:bg-slate-800 text-white">
+          <Button onClick={onOpenSetup} className="bg-black hover:bg-slate-800 text-white dark:bg-white dark:text-black dark:hover:bg-slate-200">
             <Plus className="mr-2 h-4 w-4" />
             Add Data Source
           </Button>

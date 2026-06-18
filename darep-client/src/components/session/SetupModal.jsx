@@ -14,26 +14,26 @@ export default function SetupModal({ open, onClose }) {
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-navy/60 p-4 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-navy/60 dark:bg-slate-900/80 p-4 backdrop-blur-sm">
       <div
-        className="w-full max-w-lg rounded-2xl bg-white shadow-2xl"
+        className="w-full max-w-lg rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-transparent dark:border-slate-800 transition-colors duration-200"
         role="dialog"
         aria-modal="true"
         aria-labelledby="setup-title"
       >
-        <div className="flex items-center justify-between border-b border-slate-100 px-6 py-4">
+        <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 px-6 py-4">
           <div>
-            <h2 id="setup-title" className="text-lg font-semibold text-slate-900">
+            <h2 id="setup-title" className="text-lg font-semibold text-slate-900 dark:text-white">
               Get started with Darep
             </h2>
-            <p className="mt-0.5 text-sm text-slate-500">
+            <p className="mt-0.5 text-sm text-slate-500 dark:text-slate-400">
               Upload a file or connect to a database to begin analysing data.
             </p>
           </div>
           {onClose && (
             <button
               onClick={onClose}
-              className="rounded-full p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-colors"
+              className="rounded-full p-2 text-slate-400 dark:text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
               aria-label="Close modal"
             >
               <X className="h-5 w-5" />
@@ -41,7 +41,7 @@ export default function SetupModal({ open, onClose }) {
           )}
         </div>
 
-        <div className="flex border-b border-slate-100 px-6">
+        <div className="flex border-b border-slate-100 dark:border-slate-800 px-6">
           {TABS.map(({ id, label, icon: Icon }) => (
             <button
               key={id}
@@ -49,8 +49,8 @@ export default function SetupModal({ open, onClose }) {
               onClick={() => setActiveTab(id)}
               className={`flex items-center gap-2 border-b-2 px-4 py-3 text-sm font-medium transition-colors ${
                 activeTab === id
-                  ? 'border-indigo-accent text-indigo-accent'
-                  : 'border-transparent text-slate-500 hover:text-slate-700'
+                  ? 'border-black text-black dark:border-white dark:text-white'
+                  : 'border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200'
               }`}
             >
               <Icon className="h-4 w-4" />
