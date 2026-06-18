@@ -9,7 +9,7 @@ export default function ChatPanel() {
     useChat()
 
   return (
-    <div className="flex h-[calc(100vh-3.5rem)] flex-col bg-white dark:bg-slate-900 transition-colors duration-200">
+    <div className="flex h-[calc(100vh-3.5rem)] flex-col bg-white dark:bg-black transition-colors duration-200">
       <div className="border-b border-slate-100 dark:border-slate-800 px-4 py-3">
         <h2 className="text-sm font-semibold text-slate-900 dark:text-white">Chat</h2>
       </div>

@@ -45,7 +45,7 @@ export default function TableView({ result }) {
                   <td
                     key={col}
                     className={`whitespace-nowrap border-b border-slate-100 dark:border-slate-800 px-4 py-2 text-slate-700 dark:text-slate-300 ${
-                      colIndex === 0 ? 'sticky left-0 z-10 bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800' : ''
+                      colIndex === 0 ? 'sticky left-0 z-10 bg-white dark:bg-black group-hover:bg-slate-50 dark:group-hover:bg-slate-800' : ''
                     }`}
                   >
                     {row[col] ?? row[colIndex] ?? '—'}

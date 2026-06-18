@@ -22,7 +22,7 @@ export default function ChatInput({ onSend, disabled }) {
   }
 
   return (
-    <div className="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 transition-colors duration-200">
+    <div className="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-black p-4 transition-colors duration-200">
       <div className="flex items-end gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 p-2 focus-within:border-black focus-within:ring-2 focus-within:ring-black/20 dark:focus-within:border-white dark:focus-within:ring-white/20 transition-colors">
         <textarea
           ref={textareaRef}

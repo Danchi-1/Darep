@@ -5,9 +5,9 @@ import ThemeToggle from '../shared/ThemeToggle'
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-200">
+    <div className="min-h-screen bg-white dark:bg-black transition-colors duration-200">
       {/* Navigation */}
-      <nav className="flex items-center justify-between px-6 py-4 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 transition-colors duration-200">
+      <nav className="flex items-center justify-between px-6 py-4 bg-white dark:bg-black border-b border-slate-200 dark:border-slate-800 transition-colors duration-200">
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center gap-2">
             <img src="/favicon.svg" alt="Darep" className="h-8 w-8" />
@@ -68,7 +68,7 @@ export default function LandingPage() {
                   <div className="h-8 w-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0">
                     <MessageSquare className="h-4 w-4 text-black dark:text-white" />
                   </div>
-                  <div className="flex-1 rounded-lg bg-slate-50 dark:bg-slate-900 p-3 border border-slate-100 dark:border-slate-700">
+                  <div className="flex-1 rounded-lg bg-slate-50 dark:bg-black p-3 border border-slate-100 dark:border-slate-700">
                     <p className="text-sm text-slate-700 dark:text-slate-300">Show me sales trends by region</p>
                   </div>
                 </div>
@@ -133,7 +133,7 @@ export default function LandingPage() {
 function FeatureCard({ icon: Icon, title, description }) {
   return (
     <div className="rounded-xl bg-white dark:bg-slate-800 p-6 shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md dark:hover:shadow-slate-900/50 transition-all duration-200">
-      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700">
+      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-slate-50 dark:bg-black border border-slate-100 dark:border-slate-700">
         <Icon className="h-6 w-6 text-black dark:text-white" />
       </div>
       <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{title}</h3>

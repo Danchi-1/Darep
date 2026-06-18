@@ -14,7 +14,7 @@ export default function SetupModal({ open, onClose }) {
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-navy/60 dark:bg-slate-900/80 p-4 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 dark:bg-black/80 p-4 backdrop-blur-sm">
       <div
         className="w-full max-w-lg rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-transparent dark:border-slate-800 transition-colors duration-200"
         role="dialog"
