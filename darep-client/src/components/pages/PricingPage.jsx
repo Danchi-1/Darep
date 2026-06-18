@@ -2,35 +2,13 @@ import { Link } from 'react-router-dom'
 import { Check } from 'lucide-react'
 import Button from '../shared/Button'
 import ThemeToggle from '../shared/ThemeToggle'
+import PublicNav from '../layout/PublicNav'
 
 export default function PricingPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-black transition-colors duration-200">
       {/* Navigation */}
-      <nav className="flex items-center justify-between px-6 py-4 bg-white dark:bg-black border-b border-neutral-200 dark:border-neutral-800 transition-colors duration-200">
-        <div className="flex items-center gap-8">
-          <Link to="/" className="flex items-center gap-2">
-            <img src="/favicon.svg" alt="Darep" className="h-8 w-8" />
-            <span className="text-xl font-bold text-neutral-900 dark:text-white">Darep</span>
-          </Link>
-          <div className="hidden md:flex items-center gap-6">
-            <Link to="/pricing" className="text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors">Pricing</Link>
-            <Link to="/docs" className="text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors">Docs</Link>
-            <Link to="/demo" className="text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors">Demo Sandbox</Link>
-          </div>
-        </div>
-        <div className="flex items-center gap-4">
-          <ThemeToggle />
-          <Link to="/login" className="text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors hidden sm:block">
-            Log in
-          </Link>
-          <Link to="/signup">
-            <Button className="bg-black dark:bg-white hover:bg-neutral-800 dark:hover:bg-neutral-200 text-white dark:text-black">
-              Get Started
-            </Button>
-          </Link>
-        </div>
-      </nav>
+      <PublicNav />
 
       <div className="mx-auto max-w-7xl px-6 py-20">
         <div className="text-center mb-16">
