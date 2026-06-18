@@ -57,8 +57,8 @@ export default function LandingPage() {
 
           {/* Feature Preview */}
           <div className="relative">
-            <div className="rounded-xl bg-white dark:bg-slate-800 p-6 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-200 dark:border-slate-700 transition-colors duration-200">
-              <div className="flex items-center gap-2 mb-4 border-b border-slate-100 dark:border-slate-700 pb-4">
+            <div className="rounded-xl bg-white dark:bg-neutral-900 p-6 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-200 dark:border-neutral-800 transition-colors duration-200">
+              <div className="flex items-center gap-2 mb-4 border-b border-slate-100 dark:border-neutral-800 pb-4">
                 <div className="h-3 w-3 rounded-full bg-slate-300 dark:bg-slate-600" />
                 <div className="h-3 w-3 rounded-full bg-slate-300 dark:bg-slate-600" />
                 <div className="h-3 w-3 rounded-full bg-slate-300 dark:bg-slate-600" />
@@ -68,17 +68,17 @@ export default function LandingPage() {
                   <div className="h-8 w-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0">
                     <MessageSquare className="h-4 w-4 text-black dark:text-white" />
                   </div>
-                  <div className="flex-1 rounded-lg bg-slate-50 dark:bg-black p-3 border border-slate-100 dark:border-slate-700">
-                    <p className="text-sm text-slate-700 dark:text-slate-300">Show me sales trends by region</p>
+                  <div className="flex-1 rounded-lg bg-slate-50 dark:bg-black p-3 border border-slate-100 dark:border-neutral-800">
+                    <p className="text-sm text-slate-700 dark:text-neutral-300">Show me sales trends by region</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <div className="h-8 w-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center shrink-0">
                     <BarChart3 className="h-4 w-4 text-slate-600 dark:text-slate-300" />
                   </div>
-                  <div className="flex-1 rounded-lg bg-white dark:bg-slate-800 p-3 border border-slate-200 dark:border-slate-700 shadow-sm dark:shadow-none">
-                    <p className="text-sm text-slate-700 dark:text-slate-300">Here's the analysis with a regional breakdown chart...</p>
-                    <div className="mt-3 h-24 rounded bg-slate-100 dark:bg-slate-700 animate-pulse" />
+                  <div className="flex-1 rounded-lg bg-white dark:bg-neutral-900 p-3 border border-slate-200 dark:border-neutral-800 shadow-sm dark:shadow-none">
+                    <p className="text-sm text-slate-700 dark:text-neutral-300">Here's the analysis with a regional breakdown chart...</p>
+                    <div className="mt-3 h-24 rounded bg-slate-100 dark:bg-neutral-800 animate-pulse" />
                   </div>
                 </div>
               </div>
@@ -132,8 +132,8 @@ export default function LandingPage() {
 
 function FeatureCard({ icon: Icon, title, description }) {
   return (
-    <div className="rounded-xl bg-white dark:bg-slate-800 p-6 shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md dark:hover:shadow-slate-900/50 transition-all duration-200">
-      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-slate-50 dark:bg-black border border-slate-100 dark:border-slate-700">
+    <div className="rounded-xl bg-white dark:bg-neutral-900 p-6 shadow-sm border border-slate-200 dark:border-neutral-800 hover:shadow-md dark:hover:shadow-black/50 transition-all duration-200">
+      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-slate-50 dark:bg-black border border-slate-100 dark:border-neutral-800">
         <Icon className="h-6 w-6 text-black dark:text-white" />
       </div>
       <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{title}</h3>
