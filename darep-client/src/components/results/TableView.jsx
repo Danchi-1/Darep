@@ -19,18 +19,18 @@ export default function TableView({ result }) {
 
   return (
     <div className="flex h-full flex-col">
-      <p className="mb-3 text-xs text-slate-500 dark:text-slate-400">
+      <p className="mb-3 text-xs text-neutral-500 dark:text-neutral-400">
         {formatNumber(rows.length)} row{rows.length === 1 ? '' : 's'}
       </p>
-      <div className="flex-1 overflow-auto rounded-lg border border-slate-200 dark:border-slate-700">
+      <div className="flex-1 overflow-auto rounded-lg border border-neutral-200 dark:border-neutral-700">
         <table className="min-w-full border-collapse text-sm">
-          <thead className="sticky top-0 z-10 bg-slate-50 dark:bg-slate-800">
+          <thead className="sticky top-0 z-10 bg-neutral-50 dark:bg-neutral-800">
             <tr>
               {columns.map((col, i) => (
                 <th
                   key={col}
-                  className={`whitespace-nowrap border-b border-slate-200 dark:border-slate-700 px-4 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300 ${
-                    i === 0 ? 'sticky left-0 z-20 bg-slate-50 dark:bg-slate-800' : ''
+                  className={`whitespace-nowrap border-b border-neutral-200 dark:border-neutral-700 px-4 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-neutral-600 dark:text-neutral-300 ${
+                    i === 0 ? 'sticky left-0 z-20 bg-neutral-50 dark:bg-neutral-800' : ''
                   }`}
                 >
                   {col}
@@ -40,12 +40,12 @@ export default function TableView({ result }) {
           </thead>
           <tbody>
             {rows.map((row, rowIndex) => (
-              <tr key={rowIndex} className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+              <tr key={rowIndex} className="hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors">
                 {columns.map((col, colIndex) => (
                   <td
                     key={col}
-                    className={`whitespace-nowrap border-b border-slate-100 dark:border-slate-800 px-4 py-2 text-slate-700 dark:text-slate-300 ${
-                      colIndex === 0 ? 'sticky left-0 z-10 bg-white dark:bg-black group-hover:bg-slate-50 dark:group-hover:bg-slate-800' : ''
+                    className={`whitespace-nowrap border-b border-neutral-100 dark:border-neutral-800 px-4 py-2 text-neutral-700 dark:text-neutral-300 ${
+                      colIndex === 0 ? 'sticky left-0 z-10 bg-white dark:bg-black group-hover:bg-neutral-50 dark:group-hover:bg-neutral-800' : ''
                     }`}
                   >
                     {row[col] ?? row[colIndex] ?? '—'}

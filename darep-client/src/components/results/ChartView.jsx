@@ -41,7 +41,7 @@ export default function ChartView({ result }) {
         <button
           type="button"
           onClick={handleDownload}
-          className="flex items-center gap-1.5 text-xs font-medium text-black dark:text-white hover:text-slate-600 dark:hover:text-slate-300"
+          className="flex items-center gap-1.5 text-xs font-medium text-black dark:text-white hover:text-neutral-600 dark:hover:text-neutral-300"
         >
           <Download className="h-3.5 w-3.5" />
           Download PNG

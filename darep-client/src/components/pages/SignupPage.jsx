@@ -80,13 +80,13 @@ export default function SignupPage() {
         <div className="mb-8 text-center">
           <Link to="/" className="inline-flex items-center gap-2">
             <img src="/favicon.svg" alt="Darep" className="h-8 w-8" />
-            <span className="text-2xl font-bold text-slate-900 dark:text-white">Darep</span>
+            <span className="text-2xl font-bold text-neutral-900 dark:text-white">Darep</span>
           </Link>
         </div>
 
-        <div className="rounded-xl bg-white dark:bg-slate-800 p-8 shadow-sm border border-slate-200 dark:border-slate-700 transition-colors duration-200">
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Create an account</h1>
-          <p className="text-slate-600 dark:text-slate-400 mb-6">Start analyzing your data with AI-powered insights</p>
+        <div className="rounded-xl bg-white dark:bg-neutral-800 p-8 shadow-sm border border-neutral-200 dark:border-neutral-700 transition-colors duration-200">
+          <h1 className="text-2xl font-bold text-neutral-900 dark:text-white mb-2">Create an account</h1>
+          <p className="text-neutral-600 dark:text-neutral-400 mb-6">Start analyzing your data with AI-powered insights</p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
@@ -133,14 +133,14 @@ export default function SignupPage() {
               autoComplete="new-password"
             />
 
-            <Button type="submit" className="w-full bg-black dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-200 text-white dark:text-black mt-2" disabled={isLoading}>
+            <Button type="submit" className="w-full bg-black dark:bg-white hover:bg-neutral-800 dark:hover:bg-neutral-200 text-white dark:text-black mt-2" disabled={isLoading}>
               {isLoading ? 'Creating account...' : 'Create account'}
             </Button>
           </form>
 
-          <div className="mt-6 text-center text-sm text-slate-600 dark:text-slate-400">
+          <div className="mt-6 text-center text-sm text-neutral-600 dark:text-neutral-400">
             Already have an account?{' '}
-            <Link to="/login" className="text-black dark:text-white hover:text-slate-700 dark:hover:text-slate-300 font-semibold">
+            <Link to="/login" className="text-black dark:text-white hover:text-neutral-700 dark:hover:text-neutral-300 font-semibold">
               Sign in
             </Link>
           </div>

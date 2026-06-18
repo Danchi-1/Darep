@@ -14,15 +14,15 @@ import { ChatProvider } from '../context/ChatContext'
 function DisconnectedChatPlaceholder({ onOpenSetup }) {
   return (
     <div className="flex h-[calc(100vh-3.5rem)] flex-col">
-      <div className="border-b border-slate-100 px-4 py-3">
-        <h2 className="text-sm font-semibold text-slate-900">Chat</h2>
+      <div className="border-b border-neutral-100 px-4 py-3">
+        <h2 className="text-sm font-semibold text-neutral-900">Chat</h2>
       </div>
       <EmptyState
         icon={MessageSquare}
         title="Connect a data source"
         description="Upload a file or connect to a database to start chatting with your data."
         action={
-          <Button onClick={onOpenSetup} className="bg-black hover:bg-slate-800 text-white dark:bg-white dark:text-black dark:hover:bg-slate-200">
+          <Button onClick={onOpenSetup} className="bg-black hover:bg-neutral-800 text-white dark:bg-white dark:text-black dark:hover:bg-neutral-200">
             <Plus className="mr-2 h-4 w-4" />
             Add Data Source
           </Button>
@@ -35,8 +35,8 @@ function DisconnectedChatPlaceholder({ onOpenSetup }) {
 function DisconnectedResultsPlaceholder() {
   return (
     <div className="flex h-[calc(100vh-3.5rem)] flex-col">
-      <div className="border-b border-slate-100 px-4 py-3">
-        <h2 className="text-sm font-semibold text-slate-900">Results</h2>
+      <div className="border-b border-neutral-100 px-4 py-3">
+        <h2 className="text-sm font-semibold text-neutral-900">Results</h2>
       </div>
       <EmptyState
         icon={BarChart3}

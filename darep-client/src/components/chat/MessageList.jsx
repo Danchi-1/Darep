@@ -17,7 +17,7 @@ export default function MessageList({
   if (messages.length === 0 && !isLoading) {
     return (
       <div className="flex flex-1 items-center justify-center px-6">
-        <p className="text-center text-sm text-slate-400">
+        <p className="text-center text-sm text-neutral-400">
           Ask a question about your data to get started.
         </p>
       </div>

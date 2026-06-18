@@ -16,15 +16,15 @@ export default function CodeBlock({ code, language = 'python' }) {
   }
 
   return (
-    <div className="overflow-hidden rounded-lg border border-slate-800">
-      <div className="flex items-center justify-between bg-slate-900 px-4 py-2">
-        <Badge variant="info" className="bg-slate-800 text-slate-300">
+    <div className="overflow-hidden rounded-lg border border-neutral-800">
+      <div className="flex items-center justify-between bg-neutral-900 px-4 py-2">
+        <Badge variant="info" className="bg-neutral-800 text-neutral-300">
           {language}
         </Badge>
         <button
           type="button"
           onClick={handleCopy}
-          className="flex items-center gap-1.5 text-xs text-slate-400 transition-colors hover:text-white"
+          className="flex items-center gap-1.5 text-xs text-neutral-400 transition-colors hover:text-white"
         >
           {copied ? (
             <>
