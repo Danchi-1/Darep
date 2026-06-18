@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { BarChart3 } from 'lucide-react'
 import Button from '../shared/Button'
 import Input from '../shared/Input'
+import ThemeToggle from '../shared/ThemeToggle'
 import { useAuth } from '../../context/AuthContext'
 import { login } from '../../services/api'
 import toast from 'react-hot-toast'
@@ -57,18 +58,21 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-200 flex items-center justify-center px-4 relative">
+      <div className="absolute top-4 right-4">
+        <ThemeToggle />
+      </div>
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
           <Link to="/" className="inline-flex items-center gap-2">
             <img src="/favicon.svg" alt="Darep" className="h-8 w-8" />
-            <span className="text-2xl font-bold text-slate-900">Darep</span>
+            <span className="text-2xl font-bold text-slate-900 dark:text-white">Darep</span>
           </Link>
         </div>
 
-        <div className="rounded-xl bg-white p-8 shadow-sm border border-slate-200">
-          <h1 className="text-2xl font-bold text-slate-900 mb-2">Welcome back</h1>
-          <p className="text-slate-600 mb-6">Sign in to your account to continue</p>
+        <div className="rounded-xl bg-white dark:bg-slate-800 p-8 shadow-sm border border-slate-200 dark:border-slate-700 transition-colors duration-200">
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Welcome back</h1>
+          <p className="text-slate-600 dark:text-slate-400 mb-6">Sign in to your account to continue</p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
@@ -94,23 +98,23 @@ export default function LoginPage() {
             />
 
             <div className="flex items-center justify-between text-sm">
-              <label className="flex items-center gap-2 text-slate-600">
-                <input type="checkbox" className="rounded border-slate-300 bg-white" />
+              <label className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                <input type="checkbox" className="rounded border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-black focus:ring-black dark:text-white dark:focus:ring-white" />
                 Remember me
               </label>
-              <Link to="/forgot-password" className="text-navy hover:text-slate-700 font-medium">
+              <Link to="/forgot-password" className="text-black dark:text-white hover:text-slate-700 dark:hover:text-slate-300 font-medium">
                 Forgot password?
               </Link>
             </div>
 
-            <Button type="submit" className="w-full bg-navy hover:bg-slate-800 text-white" disabled={isLoading}>
+            <Button type="submit" className="w-full bg-black dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-200 text-white dark:text-black" disabled={isLoading}>
               {isLoading ? 'Signing in...' : 'Sign in'}
             </Button>
           </form>
 
-          <div className="mt-6 text-center text-sm text-slate-600">
+          <div className="mt-6 text-center text-sm text-slate-600 dark:text-slate-400">
             Don't have an account?{' '}
-            <Link to="/signup" className="text-navy hover:text-slate-700 font-semibold">
+            <Link to="/signup" className="text-black dark:text-white hover:text-slate-700 dark:hover:text-slate-300 font-semibold">
               Sign up
             </Link>
           </div>
