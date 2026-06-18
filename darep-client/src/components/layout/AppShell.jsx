@@ -1,6 +1,7 @@
 import TopBar from './TopBar'
 
 export default function AppShell({
+  isDemo,
   isConnected,
   sourceType,
   sourceLabel,
@@ -13,6 +14,7 @@ export default function AppShell({
   return (
     <div className="flex min-h-screen flex-col bg-white dark:bg-black transition-colors duration-200">
       <TopBar
+        isDemo={isDemo}
         isConnected={isConnected}
         sourceType={sourceType}
         sourceLabel={sourceLabel}
@@ -21,7 +23,7 @@ export default function AppShell({
         onNewSession={onNewSession}
       />
 
-      <main className="flex flex-1 pt-14">
+      <main className={`flex flex-1 ${isDemo ? 'pt-[5.75rem]' : 'pt-14'}`}>
         <div className="flex w-[45%] min-w-0 flex-col border-r border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black transition-colors duration-200">
           {chatPanel}
         </div>

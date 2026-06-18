@@ -90,6 +90,7 @@ function DashboardContent({ isDemo }) {
   return (
     <>
       <AppShell
+        isDemo={isDemo}
         isConnected={isConnected}
         sourceType={sourceType}
         sourceLabel={sourceLabel}

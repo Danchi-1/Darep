@@ -4,9 +4,9 @@ import Button from '../shared/Button'
 import ThemeToggle from '../shared/ThemeToggle'
 import { formatSourceLabel, formatColumnCount, formatRowCount } from '../../utils/formatters'
 
-export default function TopBar({ isConnected, sourceType, sourceLabel, columnCount, rowCount, onNewSession }) {
+export default function TopBar({ isDemo, isConnected, sourceType, sourceLabel, columnCount, rowCount, onNewSession }) {
   return (
-    <header className="fixed top-0 right-0 left-0 z-40 flex h-14 items-center justify-between border-b border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black px-6 transition-colors duration-200">
+    <header className={`fixed right-0 left-0 z-40 flex h-14 items-center justify-between border-b border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black px-6 transition-colors duration-200 ${isDemo ? 'top-9' : 'top-0'}`}>
       <div className="flex items-center gap-6">
         <Link to="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
           <img src="/favicon.svg" alt="Darep Logo" className="h-6 w-6" />
@@ -28,6 +28,11 @@ export default function TopBar({ isConnected, sourceType, sourceLabel, columnCou
       </div>
 
       <div className="flex items-center gap-4">
+        <nav className="hidden md:flex items-center gap-4 mr-4">
+          <Link to="/dashboard" className="text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors">Dashboard</Link>
+          <Link to="/history" className="text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors">History</Link>
+          <Link to="/settings" className="text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors">Settings</Link>
+        </nav>
         {isConnected && (
           <Button
             variant="ghost"
