@@ -41,7 +41,7 @@ export default function ChartView({ result }) {
         <button
           type="button"
           onClick={handleDownload}
-          className="flex items-center gap-1.5 text-xs font-medium text-indigo-accent hover:text-indigo-500"
+          className="flex items-center gap-1.5 text-xs font-medium text-black dark:text-white hover:text-slate-600 dark:hover:text-slate-300"
         >
           <Download className="h-3.5 w-3.5" />
           Download PNG
@@ -50,7 +50,15 @@ export default function ChartView({ result }) {
       <div className="h-[400px] w-full">
         <Plot
           data={chartData.data}
-          layout={chartData.layout}
+          layout={{
+            ...chartData.layout,
+            paper_bgcolor: 'transparent',
+            plot_bgcolor: 'transparent',
+            font: {
+              ...chartData.layout?.font,
+              color: 'currentColor',
+            }
+          }}
           config={chartData.config}
           useResizeHandler
           style={{ width: '100%', height: '100%' }}

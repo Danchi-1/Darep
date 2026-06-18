@@ -19,11 +19,11 @@ const TABS = [
 function ResultsSkeleton() {
   return (
     <div className="animate-pulse space-y-4 p-6">
-      <div className="h-8 w-48 rounded bg-slate-200" />
-      <div className="h-[400px] rounded-lg bg-slate-200" />
+      <div className="h-8 w-48 rounded bg-slate-200 dark:bg-slate-700" />
+      <div className="h-[400px] rounded-lg bg-slate-200 dark:bg-slate-700" />
       <div className="space-y-2">
-        <div className="h-4 w-full rounded bg-slate-200" />
-        <div className="h-4 w-3/4 rounded bg-slate-200" />
+        <div className="h-4 w-full rounded bg-slate-200 dark:bg-slate-700" />
+        <div className="h-4 w-3/4 rounded bg-slate-200 dark:bg-slate-700" />
       </div>
     </div>
   )
@@ -50,9 +50,9 @@ export default function ResultsPanel() {
   }
 
   return (
-    <div className="flex h-[calc(100vh-3.5rem)] flex-col">
-      <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3">
-        <h2 className="text-sm font-semibold text-slate-900">Results</h2>
+    <div className="flex h-[calc(100vh-3.5rem)] flex-col bg-white dark:bg-slate-900 transition-colors duration-200">
+      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 px-4 py-3">
+        <h2 className="text-sm font-semibold text-slate-900 dark:text-white">Results</h2>
         <div className="flex gap-1">
           {TABS.map(({ id, label, icon: Icon }) => (
             <button
@@ -62,10 +62,10 @@ export default function ResultsPanel() {
               disabled={!tabAvailable[id]}
               className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
                 activeTab === id
-                  ? 'bg-indigo-accent text-white'
+                  ? 'bg-black text-white dark:bg-white dark:text-black'
                   : tabAvailable[id]
-                    ? 'text-slate-600 hover:bg-slate-100'
-                    : 'cursor-not-allowed text-slate-300'
+                    ? 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                    : 'cursor-not-allowed text-slate-300 dark:text-slate-600'
               }`}
             >
               <Icon className="h-3.5 w-3.5" />
